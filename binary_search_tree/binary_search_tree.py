@@ -15,10 +15,18 @@ class BSTNode:
         self.left = None
         self.right = None
 
+
+    def __add_left__(self, value):
+        self.left = BSTNode(value)
+
+    def __add_right__(self, value):
+        self.right = BSTNode(value)
     # Insert the given value into the tree
     def insert(self, value):
-        pass
-
+        if self.value >= value:
+            self.__add_right__(value)
+        elif self.value < value:
+            self.__add_left__(value)
     # Return True if the tree contains the value
     # False if it does not
     def contains(self, target):
