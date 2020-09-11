@@ -60,18 +60,10 @@ class DoublyLinkedList:
     """
 
     def remove_from_head(self):
-        if self.head.value != None:
-           
-            self.head = self.head.next
-            self.tail = self.tail.next
-        self.length -= 1
-        return self.head
-
-
-
-        
-
-        # print("tail.value: 2", self.tail)
+        if self.head.next == None:
+            self.head = None
+            self.tail = None
+            self.length -= 1
         
 
     """
