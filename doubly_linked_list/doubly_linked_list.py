@@ -60,12 +60,21 @@ class DoublyLinkedList:
     """
 
     def remove_from_head(self):
-        if self.head.next == None:
-            self.head = None
-            self.tail = None
-            self.length -= 1
-        
+        if not self.head:
+            return None
+            # if the list isn't empty
+        else:
+             # save the current head value
+            value = self.head.value
+            # remove prev reference of next node
+            if self.head.next is None:
+                self.head = None
+                self.tail = None
+            else:    
+                self.head.next.prev = None
 
+            self.length -= 1
+            return value
     """
     Wraps the given value in a ListNode and inserts it
     as the new tail of the list. Don't forget to handle
